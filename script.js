@@ -1,5 +1,13 @@
 // count how many fries to make
-let tabCount = getData('tabCount') || 1;
-setData('tabCount', tabCount + 1);
+const pile = new Fries('french');
+pile.addFry();
 
-new Fries('french', tabCount);
+// set up reset button
+document.querySelector('#reset').addEventListener('click', () => {
+    const remove = confirm('Are you sure you want to clear all your fries?');
+    if (!remove) return;
+
+    localStorage.clear();
+    pile.clear();
+    pile.redraw();
+});

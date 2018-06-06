@@ -1,10 +1,25 @@
 class Fries {
-    constructor (type, count) {
-        this.tabs = count;
+    constructor (type) {
+        this.tabs = getData('tabCount') || 1;
         this.type = type;
 
         this.write();
         this.drawPile();
+    }
+
+    clear () {
+        this.tabs = 0;
+    }
+
+    addFry () {
+        this.tabs++;
+        setData('tabCount', this.tabs);
+    }
+
+    redraw () {
+        this.pile.innerHTML = '';
+        this.drawPile();
+        this.write();
     }
 
     write () {
@@ -26,24 +41,23 @@ class Fries {
         const fry = document.createElement('li');
 
         fry.style.width = randomPx(40, 200);
-        fry.style.left = randomPx(0, pile.dimensions.width);
+        fry.style.left = randomPx(0, pile.width);
     
-        const randTop = randomPx(400, pile.dimensions.heightMin);
+        const randTop = randomPx(400, pile.heightMin);
         fry.animate({ top: ['-1000px', randTop] }, { delay: i * 10, duration: 500, fill: 'forwards'});
     
-        pile.ele.appendChild(fry);
+        this.pile.appendChild(fry);
     }
     
     calculatePileDimensions () {
         const maxWidth = 1000; // TODO base this off of screen width
         const maxHeight = 400; // TODO base this off of screen height
-        const pile = {};
-        pile.ele = document.getElementById('tally');
-        pile.dimensions = {};
+        const pileDimensions = {};
+        this.pile = document.getElementById('tally');
 
-        pile.dimensions.width = (this.tabs * 9) < maxWidth ? this.tabs * 9 : maxWidth;
-        pile.dimensions.heightMin = (maxHeight - (this.tabs * 3)) > 0 ? (maxHeight - (this.tabs * 3)) : 0;
-        pile.ele.style.width = pile.dimensions.width;
-        return pile;
+        pileDimensions.width = (this.tabs * 9) < maxWidth ? this.tabs * 9 : maxWidth;
+        pileDimensions.heightMin = (maxHeight - (this.tabs * 3)) > 0 ? (maxHeight - (this.tabs * 3)) : 0;
+        this.pile.style.width = pileDimensions.width;
+        return pileDimensions;
     }
 }
