@@ -1,17 +1,23 @@
-# (working title) All the fries
+# All the fries!
 
-## what do?
-- tallies your new tabs
-- gives you virtual fries
-    - and trophies (eventually (maybe))
-
+Counts how many tabs you've opened in fries.
 
 ## to do!
-- add reset button (clear fry count and type)
+- add reset button (clear fry count and set type to default french fries)
+- add alternative type: onion ring
+- allow switching between french fries and onion rings
 - add trophies
     - X fries in an hour
+    - first reset
     - reset X times
     - changed type
+    - changed type X times
     - 1000 fries!!!!
-- !!!!! WOULD BE SO COOL IF COULD EDIT THE CSS OF THE FRIES TO MAKE THEM LIKE ONION RINGS OR WEDGES!!! ??? maybe???
-- should probably refactor and stuff
+
+## notes
+
+### how to load local extension into Chrome:
+    1. go to "chrome://extensions/"
+    2. check "Developer mode"
+    3. click "Load unpacked extension..."
+    4. in the file picker, pick your extension's directory

@@ -35,8 +35,8 @@ class Fries {
     }
     
     calculatePileDimensions () {
-        const maxWidth = 1000;
-        const maxHeight = 400;
+        const maxWidth = 1000; // TODO base this off of screen width
+        const maxHeight = 400; // TODO base this off of screen height
         const pile = {};
         pile.ele = document.getElementById('tally');
         pile.dimensions = {};
