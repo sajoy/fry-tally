@@ -1,5 +1,5 @@
 // make some fries
-const pile = new Fries('french fries');
+const pile = new Fries('onion rings');
 
 // set up reset button
 document.querySelector('#reset').addEventListener('click', () => {

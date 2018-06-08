@@ -40,13 +40,37 @@ class Fries {
         const fry = document.createElement('li');
         fry.classList.add(this.type);
 
-        fry.style.width = randomPx(40, 200);
-        fry.style.left = randomPx(0, pile.width);
+        switch (this.type) {
+            case 'french-fries':
+                makeRectangleShape(fry);
+                break;
+            case 'onion-rings':
+                makeCircleShape(fry);
+                break;
+            default:
+                makeRectangleShape(fry);
+        }
+
     
+        fry.style.left = randomPx(0, pile.width);
         const randTop = randomPx(400, pile.heightMin);
         fry.animate({ top: ['-1000px', randTop] }, { delay: i * 10, duration: 500, fill: 'forwards'});
     
         this.pile.appendChild(fry);
+
+
+        function makeRectangleShape (ele) {
+            ele.style.width = randomPx(40, 200);
+        }
+
+        function makeCircleShape (ele) {
+            const radius = randomPx(90, 120);
+            ele.style.width = radius;
+            ele.style.height = radius;
+
+            const thickness = randomPx(10, 15);
+            ele.style.borderWidth = thickness;
+        }
     }
     
     calculatePileDimensions () {

@@ -92,3 +92,15 @@ h1 {
     width: 120px;
     box-shadow: -1px 2px 2px 2px goldenrod;
 }
+
+.onion-rings {
+    background-color: transparent;
+    border: goldenrod solid 20px;
+    box-shadow: inset -3px 0px 4px 7px goldenrod, 
+                1px 0px 8px 9px goldenrod;
+
+
+    border-radius: 50%;
+    height: 300px;
+    width: 300px;
+}
