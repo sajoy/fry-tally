@@ -9,6 +9,7 @@ class Fries {
 
     clear () {
         this.tabs = 0;
+        setData('tabCount', this.tabs);
     }
 
     addFry () {

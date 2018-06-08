@@ -1,10 +1,14 @@
 {
-   "manifest_version": 2,
-   "name": "new tab ext",
-   "version": "1.0",
-   "author": "Sarah Joy Calpo",
-    "description": "A new tab chrome extension!",
-   "chrome_url_overrides" : {
-     "newtab": "index.html"
-   }
- }
+  "manifest_version": 2,
+  "name": "new tab ext",
+  "version": "1.0",
+  "author": "Sarah Joy Calpo",
+  "description": "A new tab chrome extension!",
+  "background": {
+    "scripts": ["newTab.js"],
+    "persistent": false
+  },
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  }
+}
