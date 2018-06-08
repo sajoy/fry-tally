@@ -8,6 +8,9 @@
     "scripts": ["newTab.js"],
     "persistent": false
   },
+  "browser_action": {
+    "default_popup": "count.html"
+  },
   "chrome_url_overrides": {
     "newtab": "index.html"
   }
