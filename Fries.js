@@ -1,7 +1,8 @@
 class Fries {
     constructor (type) {
         this.tabs = getData('tabCount') || 1;
-        this.type = type;
+        this.displayType = type;
+        this.type = type.toLowerCase().replace(' ', '-');
 
         this.write();
         this.drawPile();
@@ -25,10 +26,7 @@ class Fries {
 
     write () {
         const typeSpan = document.getElementById('type');
-        typeSpan.innerHTML = this.type || 'french';
-        typeSpan.addEventListener('blur', function () {
-            setData('type', typeSpan.innerHTML);
-        });
+        typeSpan.innerHTML = this.displayType;
 
         document.getElementById('count').innerHTML = this.tabs || 'no';
     }
@@ -40,6 +38,7 @@ class Fries {
 
     drawFry (pile, i) {
         const fry = document.createElement('li');
+        fry.classList.add(this.type);
 
         fry.style.width = randomPx(40, 200);
         fry.style.left = randomPx(0, pile.width);

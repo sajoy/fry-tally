@@ -36,7 +36,6 @@ h1 {
     font-size: 3em;
     color: #080708;
 }
-span#type { cursor: pointer; }
 
 #tally {
     padding: 0;
@@ -51,14 +50,9 @@ span#type { cursor: pointer; }
 
 #tally li {
     display: inline-block;
-    background-color: gold;
-    height: 14px;
-    width: 120px;
     position: absolute;
     top: -15000px;
     z-index: 1;
-
-    box-shadow: -1px 2px 2px 2px goldenrod;
 }
 
 #tally li:nth-child(1n+1) {
@@ -86,4 +80,15 @@ span#type { cursor: pointer; }
 @keyframes rotatingfryC {
     from { transform: rotate(0deg); }
     to { transform: rotate(120deg); }
+}
+
+
+
+
+/* french fry styling */
+#tally .french-fries {
+    background-color: gold;
+    height: 14px;
+    width: 120px;
+    box-shadow: -1px 2px 2px 2px goldenrod;
 }
