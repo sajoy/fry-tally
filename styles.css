@@ -1,0 +1,89 @@
+body {
+    text-align: center;
+    background: #D00000;
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+}
+
+section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+button {
+    border: black solid 3px;
+    background: none;
+    font-size: .8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-left: 10px;
+}
+
+button:hover {
+    background-color: rgba(0,0,255,.4);
+}
+
+h1 {
+    margin: 0;
+    z-index: 5;
+    position: fixed;
+    top: 40%;
+    left: 200px;
+    font-size: 3em;
+    color: #080708;
+}
+span#type { cursor: pointer; }
+
+#tally {
+    padding: 0;
+    display: block;
+    height: 400px;
+    width: 90%;
+    margin: 10% auto;
+    position: relative;
+
+    transform: rotateX(30deg);
+}
+
+#tally li {
+    display: inline-block;
+    background-color: gold;
+    height: 14px;
+    width: 120px;
+    position: absolute;
+    top: -15000px;
+    z-index: 1;
+
+    box-shadow: -1px 2px 2px 2px goldenrod;
+}
+
+#tally li:nth-child(1n+1) {
+    animation: rotatingfryA .5s forwards;
+}
+
+#tally li:nth-child(3n+1) {
+    animation: rotatingfryB .5s forwards;
+}
+
+#tally li:nth-child(4n+1) {
+    animation: rotatingfryC .5s forwards;
+}
+
+@keyframes rotatingfryA {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(20deg); }
+}
+
+@keyframes rotatingfryB {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(50deg); }
+}
+
+@keyframes rotatingfryC {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(120deg); }
+}
