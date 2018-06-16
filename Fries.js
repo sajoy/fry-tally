@@ -1,9 +1,13 @@
 class Fries {
     constructor (type) {
-        this.tabs = getData('tabCount') || 1;
+        if (!getData('tabCount')) setData('tabCount', 1);
+        this.tabs = getData('tabCount');
+
         this.displayType = type;
         this.type = type.toLowerCase().replace(' ', '-');
-        this.lastDate = getData('lastDate') || new Date().toDateString();
+
+        if (!getData('lastDate')) setData('lastDate', new Date().toString().substr(0,21));
+        this.lastDate = getData('lastDate');
 
         this.write();
         this.drawPile();
@@ -16,9 +20,10 @@ class Fries {
     }
 
     addPreviousOrder () {
-        const currentDate = new Date().toDateString();
-        const endTotalString = `${this.lastDate} - ${currentDate.toString()}: ${this.tabs}`;
+        const currentDate = new Date().toString().substr(0,21);
+        const endTotalString = `${this.lastDate} - ${currentDate} ..... ${this.tabs}`;
         
+        // save date after making string bc saveDate rewrites this.lastDate
         this.saveDate(currentDate);
         this.saveOrder(endTotalString);
     }
