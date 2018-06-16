@@ -1,4 +1,5 @@
-# All the fries!
+# Fry Tally
+## All the fries!
 
 Counts how many tabs you've ever opened, but with fries.
 
