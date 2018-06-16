@@ -20,6 +20,7 @@ button {
     text-transform: uppercase;
     letter-spacing: 2px;
     height: 15px;
+    padding: 0;
 }
 
 button:hover {
@@ -48,12 +49,22 @@ section article {
     height: 200px;
     overflow-y: auto;
     padding-right: 20px;
+    text-align: right;
 }
 
 section article ul {
     list-style: none;
     padding: 0;
     line-height: 20px;
+    font-size: 1.1em;
+}
+
+#orders {
+    display: none;
+}
+
+#orders.show {
+    display: block;
 }
 
 #tally {

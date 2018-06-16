@@ -1,13 +1,17 @@
 <html>
 <head>
-    <title>all the tabs</title>
+    <title>Fry tab</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <section>
-        <button id="reset" title="clear all fries">eat  'em</button>
+        <button id="reset" title="clear all fries" aria-label="clear all fries">eat  'em</button>
         <article>
-            <h1>Previous orders</h1>
+            <button id="ordersBtn" 
+                    title="view previous counts" 
+                    aria-label="view previous counts">
+                Previous orders
+            </button>
             <ul id="orders">
             </ul>
         </article>

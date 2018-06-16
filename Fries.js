@@ -59,7 +59,11 @@ class Fries {
     }
 
     drawOrders () {
-        if (!getData('previousOrders')) return;
+        if (!getData('previousOrders')) {
+            let orderEle = document.querySelector('#ordersBtn');
+            orderEle.style.display = 'none';
+            return;
+        };
 
         const orders = getData('previousOrders');
         const orderList = document.querySelector('ul#orders');
@@ -79,6 +83,7 @@ class Fries {
     drawFry (pile, i) {
         const fry = document.createElement('li');
         fry.classList.add(this.type);
+        fry.setAttribute('aria-label', 'fry');
 
         fry.style.width = randomPx(40, 200);
         fry.style.left = randomPx(0, pile.width);

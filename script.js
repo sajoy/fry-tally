@@ -10,3 +10,8 @@ document.querySelector('#reset').addEventListener('click', () => {
     pile.clear();
     pile.redraw();
 });
+
+document.querySelector('#ordersBtn').addEventListener('click', () => {
+    const list = document.querySelector('#orders');
+    list.classList.toggle('show');
+});
