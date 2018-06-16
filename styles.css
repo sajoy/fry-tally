@@ -7,6 +7,10 @@ body {
 }
 
 section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 98%;
     display: flex;
     justify-content: space-between;
     height: 50px;
@@ -67,6 +71,22 @@ section article ul {
     display: block;
 }
 
+/* media query for button sections */
+@media (max-width: 600px) {
+    section {
+        flex-direction: column;
+        height: 100%;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    section article, #orders {
+        text-align: left;
+    }
+}
+
+
+/* fry pile and fries */
 #tally {
     padding: 0;
     display: block;
