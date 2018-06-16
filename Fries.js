@@ -7,6 +7,7 @@ class Fries {
 
         this.write();
         this.drawPile();
+        this.drawOrders();
     }
 
     clear () {
@@ -42,6 +43,7 @@ class Fries {
         this.pile.innerHTML = '';
         this.drawPile();
         this.write();
+        this.drawOrders();
     }
 
     write () {
@@ -49,6 +51,19 @@ class Fries {
         typeSpan.innerHTML = this.displayType;
 
         document.getElementById('count').innerHTML = this.tabs || 'no';
+    }
+
+    drawOrders () {
+        if (!getData('previousOrders')) return;
+
+        const orders = getData('previousOrders');
+        const orderList = document.querySelector('ul#orders');
+        orderList.innerHTML = '';
+        orders.forEach(order => {
+            const li = document.createElement('li');
+            li.textContent = order;
+            orderList.appendChild(li);
+        });   
     }
 
     drawPile () {
