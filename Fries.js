@@ -3,6 +3,7 @@ class Fries {
         this.tabs = getData('tabCount') || 1;
         this.displayType = type;
         this.type = type.toLowerCase().replace(' ', '-');
+        this.lastDate = getData('lastDate') || new Date().toDateString();
 
         this.write();
         this.drawPile();
@@ -11,6 +12,25 @@ class Fries {
     clear () {
         this.tabs = 0;
         setData('tabCount', this.tabs);
+    }
+
+    addPreviousOrder () {
+        const currentDate = new Date().toDateString();
+        const endTotalString = `${this.lastDate} - ${currentDate.toString()}: ${this.tabs}`;
+        
+        this.saveDate(currentDate);
+        this.saveOrder(endTotalString);
+    }
+
+    saveOrder (newOrder) {
+        const orders = getData('previousOrders') || [];
+        orders.push(newOrder);
+        setData('previousOrders', orders);
+    }
+
+    saveDate (date) {
+        this.lastDate = date;
+        setData('lastDate', date);
     }
 
     addFry () {
