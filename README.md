@@ -11,4 +11,4 @@ Honestly, you're not the first to ask, and a good answer probably doesn't exist.
 
 ## Install it
 
-Fry Tab is available as a Chrome Extension. Add it to your browser: [Fry Tab](#) (soon)
+Fry Tab is available as a Chrome Extension. Add it to your browser: [Fry Tab](https://chrome.google.com/webstore/detail/fry-tally/oapkdheokkamcpllihajojjmonfclfeo)
