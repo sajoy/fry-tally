@@ -10,7 +10,8 @@ section.corner-menu {
     position: fixed;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    align-items: flex-end;
+    justify-content: flex-start;
     height: 50px;
     margin: 20px;
 }
@@ -61,27 +62,32 @@ section h1 {
     letter-spacing: 2px;
 }
 
-section article {
+section[data-content="toggled-panel"] {
     font-size: .8rem;
-    height: 200px;
-    overflow-y: auto;
     padding-right: 20px;
     text-align: right;
+    height: 400px;
+    z-index: 10;
 }
 
-section article ul {
+section[data-content="toggled-panel"] ul {
     list-style: none;
-    padding: 0;
+    padding: 20px;
+    height: 400px;
+    overflow-y: auto;
     line-height: 20px;
     font-size: 1.1em;
+    background-color: #fff;
+    z-index: 2;
 }
 
-#orders {
+#orders, #settings {
     display: none;
 }
 
-#orders.show {
+#orders.show, #settings.show {
     display: block;
+    border: solid black 3px;
 }
 
 /* media query for button sections */
