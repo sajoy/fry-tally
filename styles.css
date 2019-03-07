@@ -29,6 +29,8 @@ section.corner-menu.top-right {
 section.corner-menu.bottom-left {
     bottom: 0;
     left: 0;
+    align-items: flex-start;
+    flex-direction: column-reverse;
 }
 
 button {
@@ -66,7 +68,8 @@ section[data-content="toggled-panel"] {
     font-size: .8rem;
     padding-right: 20px;
     text-align: right;
-    height: 400px;
+    height: fit-content;
+    max-height: 400px;
     z-index: 10;
 }
 
