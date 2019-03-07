@@ -1,15 +1,17 @@
 class Fries {
     constructor (type) {
-        this.tabs = getData('tabCount') || 1;
+        if (!getData('tabCount')) setData('tabCount', 1);
+        this.tabs = getData('tabCount');
+
         this.displayType = type;
         this.type = type.toLowerCase().replace(' ', '-');
 
-        // set lastDate to use when an order is cleared and saved
         if (!getData('lastDate')) setData('lastDate', new Date().toString().substr(0,21));
         this.lastDate = getData('lastDate');
 
         this.write();
         this.drawPile();
+        this.drawOrders();
     }
 
     clear () {
@@ -37,10 +39,16 @@ class Fries {
         setData('lastDate', date);
     }
 
+    addFry () {
+        this.tabs++;
+        setData('tabCount', this.tabs);
+    }
+
     redraw () {
         this.pile.innerHTML = '';
         this.drawPile();
         this.write();
+        this.drawOrders();
     }
 
     write () {
@@ -48,6 +56,23 @@ class Fries {
         typeSpan.innerHTML = this.displayType;
 
         document.getElementById('count').innerHTML = this.tabs || 'no';
+    }
+
+    drawOrders () {
+        if (!getData('previousOrders')) {
+            let orderEle = document.querySelector('#ordersBtn');
+            orderEle.style.display = 'none';
+            return;
+        };
+
+        const orders = getData('previousOrders');
+        const orderList = document.querySelector('ul#orders');
+        orderList.innerHTML = '';
+        orders.forEach(order => {
+            const li = document.createElement('li');
+            li.textContent = order;
+            orderList.appendChild(li);
+        });   
     }
 
     drawPile () {
@@ -58,6 +83,7 @@ class Fries {
     drawFry (pile, i) {
         const fry = document.createElement('li');
         fry.classList.add(this.type);
+        fry.setAttribute('aria-label', 'fry');
 
         fry.style.width = randomPx(40, 200);
         fry.style.left = randomPx(0, pile.width);

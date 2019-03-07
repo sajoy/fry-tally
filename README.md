@@ -1,23 +1,14 @@
-# All the fries!
+# Fry Tally
+## All the fries!
 
-Counts how many tabs you've opened in fries.
+Counts how many tabs you've ever opened, but with fries.
 
-## to do!
-- add reset button (clear fry count and set type to default french fries)
-- add alternative type: onion ring
-- allow switching between french fries and onion rings
-- add trophies
-    - X fries in an hour
-    - first reset
-    - reset X times
-    - changed type
-    - changed type X times
-    - 1000 fries!!!!
+![new tabs being opened, each one showing an increasing amount of french fries](screenshots/newtabs.gif)
 
-## notes
+## Why?
 
-### how to load local extension into Chrome:
-    1. go to "chrome://extensions/"
-    2. check "Developer mode"
-    3. click "Load unpacked extension..."
-    4. in the file picker, pick your extension's directory
+Honestly, you're not the first to ask, and a good answer probably doesn't exist. Fries are life, dude. All there is to it.
+
+## Install it
+
+Fry Tab is available as a Chrome Extension. Add it to your browser: [Fry Tab](#) (soon)

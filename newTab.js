@@ -1,3 +1,4 @@
 chrome.tabs.onCreated.addListener(()=> {
-    localStorage['tabCount'] = ++localStorage['tabCount'];
+    if (!localStorage.getItem('tabCount')) localStorage.setItem('tabCount', 0);
+    localStorage['tabCount']++;
 });
