@@ -6,11 +6,27 @@ body {
     font-family: monospace;
 }
 
-section {
-    width: 100%;
+section.corner-menu {
+    position: fixed;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
     height: 50px;
+}
+
+section.corner-menu.top-left {
+    top: 0;
+    left: 0;
+}
+
+section.corner-menu.top-right {
+    top: 0;
+    right: 0;
+}
+
+section.corner-menu.bottom-left {
+    bottom: 0;
+    left: 0;
 }
 
 button {

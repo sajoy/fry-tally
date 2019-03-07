@@ -4,11 +4,40 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <section>
-        <button id="reset">reset</button>
+
+    <section class="corner-menu top-left">
+        <button id="reset" title="clear all fries" aria-label="clear all fries">eat  'em</button>
     </section>
-    <h1>you have <span id='count'></span> <span id='type'></span></h1>
-    <ul id='tally'></ul>
+
+    <section class="corner-menu top-right">
+        <button id="ordersBtn" 
+                title="view previous counts" 
+                aria-label="view previous counts">
+            Previous orders
+        </button>
+        <ul id="orders">
+        </ul>
+    </section>
+
+    <section class="corner-menu bottom-left">
+        <button id="settingsBtn" 
+                title="edit settings" 
+                aria-label="edit settings">
+            Settings
+        </button>
+        <ul id="settings">
+            <li>color picker</li>
+            <li>feedback</li>
+            <li>contribute</li>
+            <li>donate</li>
+            <li>upgrade</li>
+        </ul>
+    </section>
+
+    <main>
+        <h1>you have <span id='count'></span> <span id='type'></span></h1>
+        <ul id='tally'></ul>
+    </main>
     <script src='/helpers.js'></script>
     <script src='/Fries.js'></script>
     <script src='/script.js'></script>

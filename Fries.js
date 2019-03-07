@@ -4,6 +4,10 @@ class Fries {
         this.displayType = type;
         this.type = type.toLowerCase().replace(' ', '-');
 
+        // set lastDate to use when an order is cleared and saved
+        if (!getData('lastDate')) setData('lastDate', new Date().toString().substr(0,21));
+        this.lastDate = getData('lastDate');
+
         this.write();
         this.drawPile();
     }
@@ -13,9 +17,24 @@ class Fries {
         setData('tabCount', this.tabs);
     }
 
-    addFry () {
-        this.tabs++;
-        setData('tabCount', this.tabs);
+    addPreviousOrder () {
+        const currentDate = new Date().toString().substr(0,21);
+        const endTotalString = `${this.lastDate} - ${currentDate} ..... ${this.tabs}`;
+        
+        // save date after making string bc saveDate rewrites this.lastDate
+        this.saveDate(currentDate);
+        this.saveOrder(endTotalString);
+    }
+
+    saveOrder (newOrder) {
+        const orders = getData('previousOrders') || [];
+        orders.push(newOrder);
+        setData('previousOrders', orders);
+    }
+
+    saveDate (date) {
+        this.lastDate = date;
+        setData('lastDate', date);
     }
 
     redraw () {

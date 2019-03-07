@@ -9,3 +9,9 @@ document.querySelector('#reset').addEventListener('click', () => {
     pile.clear();
     pile.redraw();
 });
+
+// set up orders button toggle
+document.querySelector('#ordersBtn').addEventListener('click', () => {
+    const list = document.querySelector('#orders');
+    list.classList.toggle('show');
+});
