@@ -1,6 +1,6 @@
 // make some fries
+const settings = new Settings();
 const pile = new Fries('french fries');
-const settings = new Settings(); 
 
 // set up buttons for reset, previous orders, settings
 document.querySelector('#reset').addEventListener('click', () => {

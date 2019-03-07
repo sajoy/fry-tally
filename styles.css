@@ -1,10 +1,13 @@
 body {
     text-align: center;
-    background: #D00000;
+    background: #ffffff;
+    color: #ffffff;
     margin: 0;
     padding: 0;
     font-family: monospace;
+    transition: background 2s;
 }
+
 
 section.corner-menu {
     position: fixed;
@@ -54,7 +57,7 @@ main h1 {
     top: 40%;
     left: 200px;
     font-size: 2rem;
-    color: #080708;
+    color: #ffffff;
 }
 
 section h1 {
@@ -74,13 +77,14 @@ section[data-content="toggled-panel"] {
 }
 
 section[data-content="toggled-panel"] ul {
+    background-color: #fff;
+    color: black;
     list-style: none;
     padding: 20px;
     height: 400px;
     overflow-y: auto;
     line-height: 20px;
     font-size: 1.1em;
-    background-color: #fff;
     z-index: 2;
 }
 
