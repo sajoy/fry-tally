@@ -26,11 +26,19 @@
             Settings
         </button>
         <ul id="settings">
-            <li>color picker</li>
-            <li>feedback</li>
-            <li>contribute</li>
-            <li>donate</li>
+            <li>
+                <label for="font-color">Change the font color</label>
+                <input type="color" id="font-color" name="font-color" value="#000000">
+            </li>
+            <li>
+                <label for="background-color">Change the background color</label>
+                <input type="color" id="background-color" name="background-color" value="#D00000">
+            </li>
             <li>upgrade</li>
+            <hr>
+            <li><a href="">share feedback</a></li>
+            <li><a href="">contribute</a></li>
+            <li><a href="">donate</a></li>
         </ul>
     </section>
 
@@ -40,6 +48,7 @@
     </main>
     <script src='/helpers.js'></script>
     <script src='/Fries.js'></script>
+    <script src='/Settings.js'></script>
     <script src='/script.js'></script>
 </body>
 </html>
