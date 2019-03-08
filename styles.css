@@ -84,7 +84,7 @@ section[data-content="toggled-panel"] ul {
     color: black;
     list-style: none;
     padding: 20px;
-    height: 400px;
+    min-height: 170px;
     overflow-y: auto;
     line-height: 20px;
     font-size: 1.1em;
