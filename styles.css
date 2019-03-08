@@ -8,6 +8,9 @@ body {
     transition: background 2s;
 }
 
+a {
+    color: black;
+}
 
 section.corner-menu {
     position: fixed;
@@ -96,6 +99,16 @@ section[data-content="toggled-panel"] ul {
     display: block;
     border: solid black 3px;
 }
+
+#settings li {
+    margin-bottom: 10px;
+}
+
+#settings li input[type="color"] {
+    height: 25px;
+    width: 25px;
+}
+
 
 /* media query for button sections */
 @media (max-width: 600px) {
