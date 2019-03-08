@@ -58,7 +58,7 @@ main h1 {
     z-index: 5;
     position: fixed;
     top: 40%;
-    left: 200px;
+    left: 20%;
     font-size: 2rem;
     color: #ffffff;
 }
@@ -89,6 +89,7 @@ section[data-content="toggled-panel"] ul {
     line-height: 20px;
     font-size: 1.1em;
     z-index: 2;
+    min-width: 290px;
 }
 
 #orders, #settings {
@@ -111,16 +112,11 @@ section[data-content="toggled-panel"] ul {
 
 
 /* media query for button sections */
-@media (max-width: 600px) {
-    section {
-        flex-direction: column;
-        height: 100%;
-        justify-content: flex-start;
+@media (max-width: 500px) {
+    section.corner-menu.top-right {
+        top: 40px;
+        left: 0;
         align-items: flex-start;
-    }
-
-    section article, #orders {
-        text-align: left;
     }
 }
 
