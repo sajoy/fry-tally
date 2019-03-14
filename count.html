@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        TESTING ! @32
+        <!-- TODO put settings here?
+            - reset count
+            - change fry type
+        -->
+    <section>
+        <button id="reset">reset</button>
+    </section>
+    <script>
+        document.querySelector('#reset').addEventListener('click', () => {
+            // const remove = confirm('Are you sure you want to clear all your fries?');
+            // if (!remove) return;
+            
+            localStorage['tabCount'] = 0;
+        });
+    </script>
+    </body>
+</html>
