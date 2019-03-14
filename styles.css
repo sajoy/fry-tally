@@ -1,20 +1,42 @@
 body {
     text-align: center;
-    background: #D00000;
+    background: #ffffff;
+    color: #ffffff;
     margin: 0;
     padding: 0;
     font-family: monospace;
+    transition: background 2s;
 }
 
-section {
+a {
+    color: black;
+}
+
+section.corner-menu {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 98%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
     height: 50px;
     margin: 20px;
+}
+
+section.corner-menu.top-left {
+    top: 0;
+    left: 0;
+}
+
+section.corner-menu.top-right {
+    top: 0;
+    right: 0;
+}
+
+section.corner-menu.bottom-left {
+    bottom: 0;
+    left: 0;
+    align-items: flex-start;
+    flex-direction: column-reverse;
 }
 
 button {
@@ -36,9 +58,9 @@ main h1 {
     z-index: 5;
     position: fixed;
     top: 40%;
-    left: 200px;
+    left: 20%;
     font-size: 2rem;
-    color: #080708;
+    color: #ffffff;
 }
 
 section h1 {
@@ -48,40 +70,53 @@ section h1 {
     letter-spacing: 2px;
 }
 
-section article {
+section[data-content="toggled-panel"] {
     font-size: .8rem;
-    height: 200px;
-    overflow-y: auto;
     padding-right: 20px;
     text-align: right;
+    height: fit-content;
+    max-height: 400px;
+    z-index: 10;
 }
 
-section article ul {
+section[data-content="toggled-panel"] ul {
+    background-color: #fff;
+    color: black;
     list-style: none;
-    padding: 0;
+    padding: 20px;
+    min-height: 170px;
+    overflow-y: auto;
     line-height: 20px;
     font-size: 1.1em;
+    z-index: 2;
+    min-width: 290px;
 }
 
-#orders {
+#orders, #settings {
     display: none;
 }
 
-#orders.show {
+#orders.show, #settings.show {
     display: block;
+    border: solid black 3px;
 }
 
-/* media query for button sections */
-@media (max-width: 600px) {
-    section {
-        flex-direction: column;
-        height: 100%;
-        justify-content: flex-start;
-        align-items: flex-start;
-    }
+#settings li {
+    margin-bottom: 10px;
+}
 
-    section article, #orders {
-        text-align: left;
+#settings li input[type="color"] {
+    height: 25px;
+    width: 25px;
+}
+
+
+/* media query for button sections */
+@media (max-width: 500px) {
+    section.corner-menu.top-right {
+        top: 40px;
+        left: 0;
+        align-items: flex-start;
     }
 }
 

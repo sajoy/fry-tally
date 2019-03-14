@@ -4,24 +4,50 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <section>
+
+    <section class="corner-menu top-left">
         <button id="reset" title="clear all fries" aria-label="clear all fries">eat  'em</button>
-        <article>
-            <button id="ordersBtn" 
-                    title="view previous counts" 
-                    aria-label="view previous counts">
-                Previous orders
-            </button>
-            <ul id="orders">
-            </ul>
-        </article>
     </section>
+
+    <section class="corner-menu top-right" data-content="toggled-panel">
+        <button id="ordersBtn" 
+                title="view previous counts" 
+                aria-label="view previous counts">
+            Previous orders
+        </button>
+        <ul id="orders">
+        </ul>
+    </section>
+
+    <section class="corner-menu bottom-left" data-content="toggled-panel">
+        <button id="settingsBtn" 
+                title="edit settings" 
+                aria-label="edit settings">
+            Settings
+        </button>
+        <ul id="settings">
+            <li>
+                <label for="font-color">change the font color</label>
+                <input type="color" id="font-color" name="font-color" value="#000000">
+            </li>
+            <li>
+                <label for="background-color">change the background color</label>
+                <input type="color" id="background-color" name="background-color" value="#D00000">
+            </li>
+            <hr>
+            <li><a href="https://airtable.com/shriMhQFGQ1yGGALc">share your feedback</a></li>
+            <li><a href="https://github.com/sajoy/fry-tally/wiki">contribute to the code</a></li>
+            <li><a href="http://ko-fi.com/sarahjoy">donate to support</a></li>
+        </ul>
+    </section>
+
     <main>
         <h1>you have <span id='count'></span> <span id='type'></span></h1>
         <ul id='tally'></ul>
     </main>
     <script src='/helpers.js'></script>
     <script src='/Fries.js'></script>
+    <script src='/Settings.js'></script>
     <script src='/script.js'></script>
 </body>
 </html>
