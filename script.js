@@ -22,6 +22,23 @@ document.querySelector('#settingsBtn').addEventListener('click', () => {
     list.classList.toggle('show');
 });
 
+document.querySelector('#purchase').addEventListener('click', () => {
+    // google.payments.inapp.getPurchases({
+    //     'parameters': {'env': 'prod'},
+    //     'success': a => console.log(a),
+    //     'failure': b => console.log(b)
+    // });
+
+    google.payments.inapp.getSkuDetails({
+        'parameters': {'env': 'prod'},
+        'success': a => console.log(`success:`,  a),
+        'failure': b => console.log(`failed:`, b)
+    });
+    
+
+});
+
+
 // set up color setting inputs
 let fontColorInput = document.querySelector('#font-color');
 let backgroundColorInput = document.querySelector('#background-color');
