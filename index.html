@@ -34,6 +34,7 @@
         </button>
         <ul id="settings">
             <li>
+                <h2 id="purchase-fries">customize the look + feel</h2>
                 <label for="font-color">change the font color</label>
                 <input type="color" id="font-color" name="font-color" value="#000000">
             </li>
@@ -41,18 +42,30 @@
                 <label for="background-color">change the background color</label>
                 <input type="color" id="background-color" name="background-color" value="#D00000">
             </li>
-            <button id="purchase-fries">indulge in more fried goodness ($1)</button>
-            <li>
-                <input type="radio" id="fries" name="food" checked>
+            <hr>
+            <li data-purchased="false">
+                <h2 id="purchase-fries">indulge in more fried goodness</h2>
+                <input type="radio" id="fries" name="food" checked disabled>
                 <label for="fries">fries</label>
-                <input type="radio" id="onion" name="food">
+                <input type="radio" id="onion" name="food" disabled>
                 <label for="onion">onion rings</label>
-                <input type="radio" id="sweet-potato" name="food">
+                <input type="radio" id="sweet-potato" name="food" disabled>
                 <label for="sweet-potato">sweet potato chips</label>
+                <button id="purchase-goodness"
+                        title="buy more fried goodness" 
+                        aria-label="buy more fried goodness">
+                    Buy for $1
+                </button>
             </li>
-            <button id="purchase-custom">use your own images ($2)</button>
-            <li>
-                <input type="text" id="custom-food">
+            <li data-purchased="false">
+                <h2 id="purchase-custom">use your own images</h2>
+                <input type="text" id="custom-food-name" placeholder="item name" disabled>
+                <input type="text" id="custom-food-img-url" placeholder="image url" disabled>
+                <button id="purchase-custom"
+                        title="buy ability to use your own image" 
+                        aria-label="buy ability to use your own image">
+                    Buy for $1
+                </button>
             </li>
             <hr>
             <li><a href="https://airtable.com/shriMhQFGQ1yGGALc">share your feedback</a></li>

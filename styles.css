@@ -39,6 +39,7 @@ section.corner-menu.bottom-left {
     flex-direction: column-reverse;
 }
 
+#settings h2,
 button {
     border: none;
     background: none;
@@ -101,6 +102,12 @@ section[data-content="toggled-panel"] ul {
     border: solid black 3px;
 }
 
+
+/* settings */
+#settings {
+    overflow-x: hidden;
+}
+
 #settings li {
     margin-bottom: 10px;
 }
@@ -110,6 +117,41 @@ section[data-content="toggled-panel"] ul {
     width: 25px;
 }
 
+#settings h2 {
+    font-size: 1rem;
+}
+
+#settings button {
+    color: black;
+    display: block;
+}
+
+#settings [data-purchased="false"] {
+    position: relative;
+}
+
+#settings [data-purchased="false"] h2,
+#settings [data-purchased="false"] input,
+#settings [data-purchased="false"] label {
+    opacity: .5;
+}
+
+#settings [data-purchased="false"] button {
+    background-color: black;
+    color: white;
+    position: absolute;
+    padding: 5px;
+    width: 130px;
+    right: -109px;
+    height: auto;
+    top: 13px;
+    text-align: left;
+    transition: right .5s;
+}
+
+#settings [data-purchased="false"]:hover button{
+    right: -20px;
+}
 
 /* media query for button sections */
 @media (max-width: 500px) {
