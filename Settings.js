@@ -28,7 +28,7 @@ class Settings {
     }
 
     applyFontColor (color) {
-        let elements = [...document.querySelectorAll("button"), document.querySelector('h1')];
+        let elements = [...document.querySelectorAll("button.custom-color"), document.querySelector('h1')];
     
         elements.forEach(function(ele) {
             ele.style.color = color;
